@@ -1,0 +1,27 @@
+RUN: 
+    - download script
+    - place it in the same folder as the xls document
+    - open console & navigate to the folder
+    - type: python music2matrix_incl_constraints
+    
+SET CONSTRAINTS: 
+    - edit the values of the varaibles CONSTRAINT_COLUMN, CONSTRAINT_OPERATOR and CONSTRAINT_VALUE
+            CONSTRAINT_COLUMN: name of the column which should be used for constraints e.g. "AGE"
+            CONSTRAINT_OPERATOR: ">", ">=", "==", "<=" or  "<"
+            CONSTRAINT_VALUE: a number (like, 8 or 1.2) or list (like [1,6,7])
+            
+EXAMPLE: 
+    - all people older than 30
+            CONSTRAINT_COLUMN = "AGE"
+            CONSTRAINT_OPERATOR = ">"
+            CONSTRAINT_VALUE = 30
+            
+    - all people with Condition 1 or 4
+            CONSTRAINT_COLUMN = "Condition"
+            CONSTRAINT_OPERATOR = "=="
+            CONSTRAINT_VALUE = [1, 4]
+            
+    - all people with ART_LIKE_1  = 4    
+            CONSTRAINT_COLUMN = "ART_LIKE_1"
+            CONSTRAINT_OPERATOR = "=="
+            CONSTRAINT_VALUE = 4
